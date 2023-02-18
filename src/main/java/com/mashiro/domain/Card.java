@@ -25,57 +25,46 @@ public class Card implements Serializable {
 
 	// ランク
 	@Column(name = "card_rank", nullable = true, length = 1)
-	@Nonnull
 	private String cardRank;
 
 	// カード名
 	@Column(name = "card_name", nullable = true, length = 40)
-	@Nonnull
 	private String cardName;
 
 	// 画像（進化前）
 	@Column(name = "before_evolution_image", nullable = true, length = 20)
-	@Nonnull
 	private String beforeEvolutionImage;
 
 	// 画像（進化後）
 	@Column(name = "after_evolution_image", nullable = true, length = 20)
-	@Nonnull
 	private String afterEvolutionImage;
 
 	// タイプ
 	@Column(name = "type", nullable = true, length = 12)
-	@Nonnull
 	private String type;
 
 	// パフォーマンス
 	@Column(name = "performance", nullable = true, length = 5)
-	@Nonnull
 	private String performance;
 
 	// テクニック
 	@Column(name = "technique", nullable = true, length = 5)
-	@Nonnull
 	private String technique;
 
 	// ビジュアル
 	@Column(name = "visual", nullable = true, length = 5)
-	@Nonnull
 	private String visual;
 
 	// 総合力
 	@Column(name = "total_value", nullable = true, length = 6)
-	@Nonnull
 	private String totalValue;
 
 	// スキル名
 	@Column(name = "skill_name", nullable = true, length = 40)
-	@Nonnull
 	private String skillName;
 
 	// スキル効果
 	@Column(name = "skill_effect", nullable = true, length = 200)
-	@Nonnull
 	private String skillEffect;
 
 	/**
