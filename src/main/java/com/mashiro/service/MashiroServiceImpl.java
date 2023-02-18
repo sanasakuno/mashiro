@@ -16,6 +16,9 @@ public class MashiroServiceImpl implements MashiroService {
 	@Autowired
 	private CardRepository cardRepository;
 
+	/**
+	 * ましろちゃんのデータ一覧を表示
+	 */
 	@Override
 	public ModelAndView mashiro() {
 
@@ -57,6 +60,9 @@ public class MashiroServiceImpl implements MashiroService {
 
 	}
 
+	/**
+	 * ましろちゃんの画像一覧を表示
+	 */
 	@Override
 	public ModelAndView mashiroImages() {
 

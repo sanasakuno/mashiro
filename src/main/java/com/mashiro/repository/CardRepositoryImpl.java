@@ -19,14 +19,16 @@ public class CardRepositoryImpl implements CardRepository {
 	@Override
 	public List<Card> findAll() {
 
+		// 実行するSQLの設定
 		String sql = "select * from card order by cast(card_rank as SIGNED) desc, card_id";
 
+		// SQL実行し、Mapのリストを取得
 		List<Map<String, Object>> cards = jdbcTemplate.queryForList(sql);
 
-		// Userオブジェクト格納用のListを作成する。
+		// Cardオブジェクト格納用のListを作成する。
 		List<Card> cardList = new ArrayList<Card>();
 
-		// 受け取ったMapのListをfor文で回し、各ユーザの値をUserオブジェクトに格納する。
+		// 受け取ったMapのListをfor文で回し、各ユーザの値をCardオブジェクトに格納する。
 		for (Map<String, Object> eachCard : cards) {
 			Card card = new Card(
 					(int) eachCard.get("card_rank"), (int) eachCard.get("card_id"),

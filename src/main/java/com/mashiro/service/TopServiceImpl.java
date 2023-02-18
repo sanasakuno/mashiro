@@ -6,6 +6,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Service
 public class TopServiceImpl implements TopService {
 
+	/**
+	 * トップページを表示
+	 */
 	@Override
 	public ModelAndView topPage() {
 
