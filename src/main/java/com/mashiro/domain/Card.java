@@ -12,20 +12,16 @@ import jakarta.persistence.Table;
 @Table(name = "card")
 public class Card implements Serializable {
 
+	// ランク
+	@Column(name = "card_rank", nullable = true, length = 1)
+	@Nonnull
+	private int cardRank;
+
 	// カードID
 	@Id
 	@Column(name = "card_id", nullable = true, length = 2)
 	@Nonnull
-	private String cardId;
-
-	// キャラクターID
-	@Column(name = "character_id", nullable = true, length = 2)
-	@Nonnull
-	private String characterId;
-
-	// ランク
-	@Column(name = "card_rank", nullable = true, length = 1)
-	private String cardRank;
+	private int cardId;
 
 	// カード名
 	@Column(name = "card_name", nullable = true, length = 40)
@@ -68,44 +64,16 @@ public class Card implements Serializable {
 	private String skillEffect;
 
 	/**
-	 * @return cardId
-	 */
-	public String getCardId() {
-		return cardId;
-	}
-
-	/**
-	 * @param cardId セット cardId
-	 */
-	public void setCardId(String cardId) {
-		this.cardId = cardId;
-	}
-
-	/**
-	 * @return characterId
-	 */
-	public String getCharacterId() {
-		return characterId;
-	}
-
-	/**
-	 * @param characterId セット characterId
-	 */
-	public void setCharacterId(String characterId) {
-		this.characterId = characterId;
-	}
-
-	/**
 	 * @return cardRank
 	 */
-	public String getCardFank() {
+	public int getCardRank() {
 		return cardRank;
 	}
 
 	/**
 	 * @param cardRank セット cardRank
 	 */
-	public void setCardFank(String cardRank) {
+	public void setCardRank(int cardRank) {
 		this.cardRank = cardRank;
 	}
 
@@ -246,6 +214,23 @@ public class Card implements Serializable {
 	 * @param skillEffect セット skillEffect
 	 */
 	public void setSkillEffect(String skillEffect) {
+		this.skillEffect = skillEffect;
+	}
+
+	public Card(int cardRank, int cardId, String cardName, String beforeEvolutionImage, String afterEvolutionImage,
+			String type, String performance, String technique, String visual, String totalValue, String skillName,
+			String skillEffect) {
+		this.cardRank = cardRank;
+		this.cardId = cardId;
+		this.cardName = cardName;
+		this.beforeEvolutionImage = beforeEvolutionImage;
+		this.afterEvolutionImage = afterEvolutionImage;
+		this.type = type;
+		this.performance = performance;
+		this.technique = technique;
+		this.visual = visual;
+		this.totalValue = totalValue;
+		this.skillName = skillName;
 		this.skillEffect = skillEffect;
 	}
 

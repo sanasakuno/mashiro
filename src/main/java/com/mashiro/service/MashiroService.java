@@ -6,4 +6,6 @@ public interface MashiroService {
 
 	ModelAndView mashiro();
 
+	ModelAndView mashiroImages();
+
 }

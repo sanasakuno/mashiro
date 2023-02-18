@@ -20,4 +20,11 @@ public class MashiroController {
 
 	}
 
+	@GetMapping("/mashiro/mashiro_images")
+	public ModelAndView mashiroImages() {
+
+		return mashiroService.mashiroImages();
+
+	}
+
 }
