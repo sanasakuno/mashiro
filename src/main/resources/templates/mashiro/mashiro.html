@@ -13,6 +13,52 @@
 	<body>
 		<h1>ましろちゃん美術館</h1>
 		<a href="mashiro_images">ましろちゃん画像一覧</a>
+		<th:block th:if="!${#lists.isEmpty(rank5DataList)}">
+			<h2>レアリティ：★★★★★</h2>
+			<table>
+				<tr>
+					<th rowspan="2">カード名</th>
+					<th colspan="5">ステータス</th>
+					<th colspan="2">スキル</th>
+				</tr>
+				<tr>
+					<th>タイプ</th>
+					<th>パフォーマンス</th>
+					<th>テクニック</th>
+					<th>ビジュアル</th>
+					<th>総合力</th>
+					<th>スキル名</th>
+					<th>効果</th>
+				</tr>
+				<th:block th:each="card5 : ${rank5DataList}">
+					<tr>
+						<td>
+							<th:block th:if="${card5.beforeEvolutionImage != null}">
+								<a th:href="'/image/BangDream/5/' + ${card5.beforeEvolutionImage}">[[${card5.cardName}]]（進化前）</a><br>
+								<a th:href="'/image/BangDream/5/' + ${card5.afterEvolutionImage}">[[${card5.cardName}]]（進化後）</a>
+							</th:block>
+							<th:block th:unless="${card5.beforeEvolutionImage != null}">
+								<a th:href="'/image/BangDream/5/' + ${card5.afterEvolutionImage}">[[${card5.cardName}]]</a>
+							</th:block>
+						</td>
+						<td>[[${card5.type}]]</td>
+						<td>[[${card5.performance}]]</td>
+						<td>[[${card5.technique}]]</td>
+						<td>[[${card5.visual}]]</td>
+						<td>[[${card5.totalValue}]]</td>
+						<td>[[${card5.skillName}]]</td>
+						<td>
+							<th:block th:if="${card5.skillEffect}">
+								<th:block th:each="str, stat : ${card5.skillEffect.split('\r\n|\r|\n', -1)}">
+									<th:block th:text="${str}"/>
+									<br th:if="${!stat.last}"/>
+								</th:block>
+							</th:block>
+						</td>
+					</tr>
+				</th:block>
+			</table>
+		</th:block>
 		<th:block th:if="!${#lists.isEmpty(rank4DataList)}">
 			<h2>レアリティ：★★★★</h2>
 			<table>

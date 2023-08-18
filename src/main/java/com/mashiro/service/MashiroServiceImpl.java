@@ -29,12 +29,16 @@ public class MashiroServiceImpl implements MashiroService {
 		List<Card> cardList = cardRepository.findAll();
 
 		// 各ランクカードデータ取得
+		List<Card> rank5DataList = new ArrayList<Card>();
 		List<Card> rank4DataList = new ArrayList<Card>();
 		List<Card> rank3DataList = new ArrayList<Card>();
 		List<Card> rank2DataList = new ArrayList<Card>();
 		List<Card> rank1DataList = new ArrayList<Card>();
 		for (Card card : cardList) {
 			switch (card.getCardRank()) {
+			case 5:
+				rank5DataList.add(card);
+				break;
 			case 4:
 				rank4DataList.add(card);
 				break;
@@ -51,6 +55,7 @@ public class MashiroServiceImpl implements MashiroService {
 		}
 
 		// 画面側の変数に格納
+		modelAndView.addObject("rank5DataList", rank5DataList);
 		modelAndView.addObject("rank4DataList", rank4DataList);
 		modelAndView.addObject("rank3DataList", rank3DataList);
 		modelAndView.addObject("rank2DataList", rank2DataList);
@@ -68,6 +73,12 @@ public class MashiroServiceImpl implements MashiroService {
 
 		// MAVの初期設定
 		ModelAndView modelAndView = new ModelAndView("/mashiro/mashiro_images");
+
+		// カードデータ取得
+		List<Card> cardList = cardRepository.findAll();
+
+		// 画面側の変数に格納
+		modelAndView.addObject("cardList", cardList);
 
 		return modelAndView;
 		
