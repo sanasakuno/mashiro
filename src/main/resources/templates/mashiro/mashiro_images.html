@@ -9,8 +9,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
 	</head>
 	<body>
+	<a href="/mashiro/">戻る</a>
 		<h1>ましろちゃん画像一覧</h1>
-	<div class="swiper-container">
+	<div class="swiper-container" style="width: 1280px;">
 		<div class="swiper-wrapper">
 			<th:block th:if="!${#lists.isEmpty(cardList)}">
 				<th:block th:each="card : ${cardList}">
