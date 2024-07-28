@@ -34,9 +34,8 @@ public class CardRepositoryImpl implements CardRepository {
 					(int) eachCard.get("card_rank"), (int) eachCard.get("card_id"),
 					(String) eachCard.get("card_name"), (String) eachCard.get("before_evolution_image"),
 					(String) eachCard.get("after_evolution_image"), (String) eachCard.get("type"),
-					(String) eachCard.get("performance"), (String) eachCard.get("technique"),
-					(String) eachCard.get("visual"), (String) eachCard.get("total_value"),
-					(String) eachCard.get("skill_name"), (String) eachCard.get("skill_effect"));
+					(int) eachCard.get("performance"), (int) eachCard.get("technique"),
+					(int) eachCard.get("visual"), (String) eachCard.get("skill_name"), (String) eachCard.get("skill_effect"));
 			cardList.add(card);
 		}
 

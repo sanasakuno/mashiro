@@ -11,16 +11,16 @@
 	<body>
 	<a href="/mashiro/">戻る</a>
 		<h1>ましろちゃん画像一覧</h1>
-	<div class="swiper-container" style="width: 1280px;">
+	<div class="swiper-container" style="height: 720px;">
 		<div class="swiper-wrapper">
 			<th:block th:if="!${#lists.isEmpty(cardList)}">
 				<th:block th:each="card : ${cardList}">
 					<th:block th:if="${card.beforeEvolutionImage != null}">
-						<div class="swiper-slide"><img width="100%" th:src="'../image/BangDream/' + ${card.cardRank} + '/' + ${card.beforeEvolutionImage}" alt=""></div>
-						<div class="swiper-slide"><img width="100%" th:src="'../image/BangDream/' + ${card.cardRank} + '/' + ${card.afterEvolutionImage}" alt=""></div>
+						<div class="swiper-slide"><img height="100%" th:src="'../image/BangDream/' + ${card.cardRank} + '/' + ${card.beforeEvolutionImage}" alt=""></div>
+						<div class="swiper-slide"><img height="100%" th:src="'../image/BangDream/' + ${card.cardRank} + '/' + ${card.afterEvolutionImage}" alt=""></div>
 					</th:block>
 					<th:block th:unless="${card.beforeEvolutionImage != null}">
-						<div class="swiper-slide"><img width="100%" th:src="'../image/BangDream/' + ${card.cardRank} + '/' + ${card.afterEvolutionImage}" alt=""></div>
+						<div class="swiper-slide"><img height="100%" th:src="'../image/BangDream/' + ${card.cardRank} + '/' + ${card.afterEvolutionImage}" alt=""></div>
 					</th:block>
 				</th:block>
 			</th:block>

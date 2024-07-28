@@ -41,19 +41,15 @@ public class Card implements Serializable {
 
 	// パフォーマンス
 	@Column(name = "performance", nullable = true, length = 5)
-	private String performance;
+	private int performance;
 
 	// テクニック
 	@Column(name = "technique", nullable = true, length = 5)
-	private String technique;
+	private int technique;
 
 	// ビジュアル
 	@Column(name = "visual", nullable = true, length = 5)
-	private String visual;
-
-	// 総合力
-	@Column(name = "total_value", nullable = true, length = 6)
-	private String totalValue;
+	private int visual;
 
 	// スキル名
 	@Column(name = "skill_name", nullable = true, length = 40)
@@ -62,6 +58,9 @@ public class Card implements Serializable {
 	// スキル効果
 	@Column(name = "skill_effect", nullable = true, length = 200)
 	private String skillEffect;
+
+	// ステータス合計値
+	private int totalValue;
 
 	/**
 	 * @return cardRank
@@ -136,57 +135,43 @@ public class Card implements Serializable {
 	/**
 	 * @return performance
 	 */
-	public String getPerformance() {
+	public int getPerformance() {
 		return performance;
 	}
 
 	/**
 	 * @param performance セット performance
 	 */
-	public void setPerformance(String performance) {
+	public void setPerformance(int performance) {
 		this.performance = performance;
 	}
 
 	/**
 	 * @return technique
 	 */
-	public String getTechnique() {
+	public int getTechnique() {
 		return technique;
 	}
 
 	/**
 	 * @param technique セット technique
 	 */
-	public void setTechnique(String technique) {
+	public void setTechnique(int technique) {
 		this.technique = technique;
 	}
 
 	/**
 	 * @return visual
 	 */
-	public String getVisual() {
+	public int getVisual() {
 		return visual;
 	}
 
 	/**
 	 * @param visual セット visual
 	 */
-	public void setVisual(String visual) {
+	public void setVisual(int visual) {
 		this.visual = visual;
-	}
-
-	/**
-	 * @return totalValue
-	 */
-	public String getTotalValue() {
-		return totalValue;
-	}
-
-	/**
-	 * @param totalValue セット totalValue
-	 */
-	public void setTotalValue(String totalValue) {
-		this.totalValue = totalValue;
 	}
 
 	/**
@@ -217,8 +202,22 @@ public class Card implements Serializable {
 		this.skillEffect = skillEffect;
 	}
 
+	/**
+	 * @param totalValue セット totalValue
+	 */
+	public int getTotalValue() {
+		return totalValue;
+	}
+
+	/**
+	 * @return totalValue
+	 */
+	public void setTotalValue(int totalValue) {
+		this.totalValue = totalValue;
+	}
+
 	public Card(int cardRank, int cardId, String cardName, String beforeEvolutionImage, String afterEvolutionImage,
-			String type, String performance, String technique, String visual, String totalValue, String skillName,
+			String type, int performance, int technique, int visual, String skillName,
 			String skillEffect) {
 		this.cardRank = cardRank;
 		this.cardId = cardId;
@@ -229,9 +228,9 @@ public class Card implements Serializable {
 		this.performance = performance;
 		this.technique = technique;
 		this.visual = visual;
-		this.totalValue = totalValue;
 		this.skillName = skillName;
 		this.skillEffect = skillEffect;
+		this.totalValue = performance + technique + visual;
 	}
 
 }
