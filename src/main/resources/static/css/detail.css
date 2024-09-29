@@ -1,0 +1,20 @@
+table {
+  border-collapse: collapse;
+  margin: auto;
+  margin-bottom: 30px;
+  width: 70%;
+}
+table th {/*table内のthに対して*/
+  padding: 10px;/*上下左右10pxずつ*/
+  background: #fff5e5;/*背景色*/
+}
+table td {/*table内のtdに対して*/
+  padding: 3px 10px;/*上下3pxで左右10px*/
+  text-align: center;
+}
+table th, table td {
+  border: solid 1px black;
+  /*実線 1px 黒*/
+}
+td {
+}

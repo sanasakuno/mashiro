@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+	<head>
+		<title>ましろちゃんカード詳細</title>
+		<meta name="description" content="ましろちゃん美術館へようこそ！ここは世界一かわいい倉田ましろちゃんを眺められるサイトです。"/>
+		<link rel="stylesheet" href="/css/detail.css">
+	</head>
+  </head>
+
+	<body>
+		<div>
+			<a href="/mashiro/">戻る</a>
+		</div>
+		<h1>[[${card.cardName}]]</h1>
+		<th:block th:switch="${card.cardRank}">
+			<h2 th:case=5>レアリティ：★★★★★</h2>
+			<h2 th:case=4>レアリティ：★★★★</h2>
+			<h2 th:case=3>レアリティ：★★★</h2>
+			<h2 th:case=2>レアリティ：★★</h2>
+			<h2 th:case=1>レアリティ：★</h2>
+		</th:block>
+		<table>
+			<tr>
+				<th colspan="5">ステータス</th>
+			</tr>
+			<tr>
+				<th>タイプ</th>
+				<th>パフォーマンス</th>
+				<th>テクニック</th>
+				<th>ビジュアル</th>
+				<th>総合力</th>
+			</tr>
+			<tr>
+				<td>[[${card.type}]]</td>
+				<td>[[${card.performance}]]</td>
+				<td>[[${card.technique}]]</td>
+				<td>[[${card.visual}]]</td>
+				<td>[[${card.totalValue}]]</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th colspan="5">スキル</th>
+			</tr>
+			<tr>
+				<th colspan="2">スキル名</th>
+				<th colspan="3">効果</th>
+			</tr>
+			<tr>
+				<td colspan="2">[[${card.skillName}]]</td>
+				<td colspan="3">
+					<th:block th:if="${card.skillEffect}">
+						<th:block th:each="str, stat : ${card.skillEffect.split('\r\n|\r|\n', -1)}">
+							<th:block th:text="${str}"/>
+							<br th:if="${!stat.last}"/>
+						</th:block>
+					</th:block>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>
