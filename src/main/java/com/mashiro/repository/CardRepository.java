@@ -8,4 +8,6 @@ public interface CardRepository {
 
 	List<Card> findAll();
 
+	Card findCard(int cardRank, int cardId);
+
 }

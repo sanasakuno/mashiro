@@ -35,11 +35,34 @@ public class CardRepositoryImpl implements CardRepository {
 					(String) eachCard.get("card_name"), (String) eachCard.get("before_evolution_image"),
 					(String) eachCard.get("after_evolution_image"), (String) eachCard.get("type"),
 					(int) eachCard.get("performance"), (int) eachCard.get("technique"),
-					(int) eachCard.get("visual"), (String) eachCard.get("skill_name"), (String) eachCard.get("skill_effect"));
+					(int) eachCard.get("visual"), (String) eachCard.get("skill_name"),
+					(String) eachCard.get("skill_effect"));
 			cardList.add(card);
 		}
 
 		return cardList;
+
+	};
+
+	@Override
+	public Card findCard(int cardRank, int cardId) {
+
+		// 実行するSQLの設定
+		String sql = "select * from card where card_rank = ? and card_id = ?";
+
+		// SQL実行し、Mapのリストを取得
+		Map<String, Object> data = jdbcTemplate.queryForMap(sql, new Object[] { cardRank, cardId });
+
+		// 受け取ったMapのListをfor文で回し、各ユーザの値をCardオブジェクトに格納する。
+		Card card = new Card(
+				(int) data.get("card_rank"), (int) data.get("card_id"),
+				(String) data.get("card_name"), (String) data.get("before_evolution_image"),
+				(String) data.get("after_evolution_image"), (String) data.get("type"),
+				(int) data.get("performance"), (int) data.get("technique"),
+				(int) data.get("visual"), (String) data.get("skill_name"),
+				(String) data.get("skill_effect"));
+
+		return card;
 
 	};
 

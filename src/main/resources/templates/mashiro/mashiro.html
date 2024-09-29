@@ -33,13 +33,7 @@
 				<th:block th:each="card5 : ${rank5DataList}">
 					<tr>
 						<td>
-							<th:block th:if="${card5.beforeEvolutionImage != null}">
-								<a th:href="'/image/BangDream/5/' + ${card5.beforeEvolutionImage}">[[${card5.cardName}]]（進化前）</a><br>
-								<a th:href="'/image/BangDream/5/' + ${card5.afterEvolutionImage}">[[${card5.cardName}]]（進化後）</a>
-							</th:block>
-							<th:block th:unless="${card5.beforeEvolutionImage != null}">
-								<a th:href="'/image/BangDream/5/' + ${card5.afterEvolutionImage}">[[${card5.cardName}]]</a>
-							</th:block>
+							<a th:href="'/mashiro/mashiro_detail/' + ${card5.cardRank} + '/' + ${card5.cardId}">[[${card5.cardName}]]</a>
 						</td>
 						<td>[[${card5.type}]]</td>
 						<td>[[${card5.performance}]]</td>
@@ -79,13 +73,7 @@
 				<th:block th:each="card4 : ${rank4DataList}">
 					<tr>
 						<td>
-							<th:block th:if="${card4.beforeEvolutionImage != null}">
-								<a th:href="'/image/BangDream/4/' + ${card4.beforeEvolutionImage}">[[${card4.cardName}]]（進化前）</a><br>
-								<a th:href="'/image/BangDream/4/' + ${card4.afterEvolutionImage}">[[${card4.cardName}]]（進化後）</a>
-							</th:block>
-							<th:block th:unless="${card4.beforeEvolutionImage != null}">
-								<a th:href="'/image/BangDream/4/' + ${card4.afterEvolutionImage}">[[${card4.cardName}]]</a>
-							</th:block>
+							<a th:href="'/mashiro/mashiro_detail/' + ${card4.cardRank} + '/' + ${card4.cardId}">[[${card4.cardName}]]</a>
 						</td>
 						<td>[[${card4.type}]]</td>
 						<td>[[${card4.performance}]]</td>
@@ -125,13 +113,7 @@
 				<th:block th:each="card3 : ${rank3DataList}">
 					<tr>
 						<td>
-							<th:block th:if="${card3.beforeEvolutionImage != null}">
-								<a th:href="'/image/BangDream/3/' + ${card3.beforeEvolutionImage}">[[${card3.cardName}]]（進化前）</a><br>
-								<a th:href="'/image/BangDream/3/' + ${card3.afterEvolutionImage}">[[${card3.cardName}]]（進化後）</a>
-							</th:block>
-							<th:block th:unless="${card3.beforeEvolutionImage != null}">
-								<a th:href="'/image/BangDream/3/' + ${card3.afterEvolutionImage}">[[${card3.cardName}]]</a>
-							</th:block>
+							<a th:href="'/mashiro/mashiro_detail/' + ${card3.cardRank} + '/' + ${card3.cardId}">[[${card3.cardName}]]</a>
 						</td>
 						<td>[[${card3.type}]]</td>
 						<td>[[${card3.performance}]]</td>
@@ -171,13 +153,7 @@
 				<th:block th:each="card2 : ${rank2DataList}">
 					<tr>
 						<td>
-							<th:block th:if="${card2.beforeEvolutionImage != null}">
-								<a th:href="'/image/BangDream/2/' + ${card2.beforeEvolutionImage}">[[${card2.cardName}]]（進化前）</a><br>
-								<a th:href="'/image/BangDream/2/' + ${card2.afterEvolutionImage}">[[${card2.cardName}]]（進化後）</a>
-							</th:block>
-							<th:block th:unless="${card2.beforeEvolutionImage != null}">
-								<a th:href="'/image/BangDream/2/' + ${card2.afterEvolutionImage}">[[${card2.cardName}]]</a>
-							</th:block>
+							<a th:href="'/mashiro/mashiro_detail/' + ${card2.cardRank} + '/' + ${card2.cardId}">[[${card2.cardName}]]</a>
 						</td>
 						<td>[[${card2.type}]]</td>
 						<td>[[${card2.performance}]]</td>
@@ -217,13 +193,7 @@
 				<th:block th:each="card1 : ${rank1DataList}">
 					<tr>
 						<td>
-							<th:block th:if="${card1.beforeEvolutionImage != null}">
-								<a th:href="'/image/BangDream/1/' + ${card1.beforeEvolutionImage}">[[${card1.cardName}]]（進化前）</a><br>
-								<a th:href="'/image/BangDream/1/' + ${card1.afterEvolutionImage}">[[${card1.cardName}]]（進化後）</a>
-							</th:block>
-							<th:block th:unless="${card1.beforeEvolutionImage != null}">
-								<a th:href="'/image/BangDream/1/' + ${card1.afterEvolutionImage}">[[${card1.cardName}]]</a>
-							</th:block>
+							<a th:href="'/mashiro/mashiro_detail/' + ${card1.cardRank} + '/' + ${card1.cardId}">[[${card1.cardName}]]</a>
 						</td>
 						<td>[[${card1.type}]]</td>
 						<td>[[${card1.performance}]]</td>

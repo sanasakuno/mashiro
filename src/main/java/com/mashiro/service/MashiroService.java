@@ -8,4 +8,6 @@ public interface MashiroService {
 
 	ModelAndView mashiroImages();
 
+	ModelAndView mashiroDetail(int rank, int cardId);
+
 }

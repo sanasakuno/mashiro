@@ -84,4 +84,23 @@ public class MashiroServiceImpl implements MashiroService {
 		
 	}
 
+	/**
+	 * ましろちゃんのカード詳細画面を表示
+	 */
+	@Override
+	public ModelAndView mashiroDetail(int cardRank, int cardId) {
+
+		// MAVの初期設定
+		ModelAndView modelAndView = new ModelAndView("/mashiro/mashiro_detail");
+
+		// カードデータ取得
+		Card card = cardRepository.findCard(cardRank, cardId);
+
+		// 画面側の変数に格納
+		modelAndView.addObject("card", card);
+
+		return modelAndView;
+		
+	}
+
 }

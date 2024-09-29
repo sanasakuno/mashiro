@@ -77,6 +77,20 @@ public class Card implements Serializable {
 	}
 
 	/**
+	 * @return cardId
+	 */
+	public int getCardId() {
+		return cardId;
+	}
+
+	/**
+	 * @param cardId セット cardId
+	 */
+	public void setCardId(int cardId) {
+		this.cardId = cardId;
+	}
+
+	/**
 	 * @return cardName
 	 */
 	public String getCardName() {
