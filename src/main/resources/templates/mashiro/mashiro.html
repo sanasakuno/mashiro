@@ -18,29 +18,20 @@
 			<table>
 				<tr>
 					<th rowspan="2">カード名</th>
-					<th colspan="5">ステータス</th>
+					<th rowspan="2">タイプ</th>
 					<th colspan="2">スキル</th>
 				</tr>
 				<tr>
-					<th>タイプ</th>
-					<th>パフォーマンス</th>
-					<th>テクニック</th>
-					<th>ビジュアル</th>
-					<th>総合力</th>
 					<th>スキル名</th>
 					<th>効果</th>
 				</tr>
 				<th:block th:each="card5 : ${rank5DataList}">
 					<tr>
-						<td>
+						<td class="cardName">
 							<a th:href="'/mashiro/mashiro_detail/' + ${card5.cardRank} + '/' + ${card5.cardId}">[[${card5.cardName}]]</a>
 						</td>
-						<td>[[${card5.type}]]</td>
-						<td>[[${card5.performance}]]</td>
-						<td>[[${card5.technique}]]</td>
-						<td>[[${card5.visual}]]</td>
-						<td>[[${card5.totalValue}]]</td>
-						<td>[[${card5.skillName}]]</td>
+						<td class="type">[[${card5.type}]]</td>
+						<td class="skillName">[[${card5.skillName}]]</td>
 						<td>
 							<th:block th:if="${card5.skillEffect}">
 								<th:block th:each="str, stat : ${card5.skillEffect.split('\r\n|\r|\n', -1)}">
@@ -58,29 +49,20 @@
 			<table>
 				<tr>
 					<th rowspan="2">カード名</th>
-					<th colspan="5">ステータス</th>
+					<th rowspan="2">タイプ</th>
 					<th colspan="2">スキル</th>
 				</tr>
 				<tr>
-					<th>タイプ</th>
-					<th>パフォーマンス</th>
-					<th>テクニック</th>
-					<th>ビジュアル</th>
-					<th>総合力</th>
 					<th>スキル名</th>
 					<th>効果</th>
 				</tr>
 				<th:block th:each="card4 : ${rank4DataList}">
 					<tr>
-						<td>
+						<td class="cardName">
 							<a th:href="'/mashiro/mashiro_detail/' + ${card4.cardRank} + '/' + ${card4.cardId}">[[${card4.cardName}]]</a>
 						</td>
-						<td>[[${card4.type}]]</td>
-						<td>[[${card4.performance}]]</td>
-						<td>[[${card4.technique}]]</td>
-						<td>[[${card4.visual}]]</td>
-						<td>[[${card4.totalValue}]]</td>
-						<td>[[${card4.skillName}]]</td>
+						<td class="type">[[${card4.type}]]</td>
+						<td class="skillName">[[${card4.skillName}]]</td>
 						<td>
 							<th:block th:if="${card4.skillEffect}">
 								<th:block th:each="str, stat : ${card4.skillEffect.split('\r\n|\r|\n', -1)}">
@@ -98,29 +80,20 @@
 			<table>
 				<tr>
 					<th rowspan="2">カード名</th>
-					<th colspan="5">ステータス</th>
+					<th rowspan="2">タイプ</th>
 					<th colspan="2">スキル</th>
 				</tr>
 				<tr>
-					<th>タイプ</th>
-					<th>パフォーマンス</th>
-					<th>テクニック</th>
-					<th>ビジュアル</th>
-					<th>総合力</th>
 					<th>スキル名</th>
 					<th>効果</th>
 				</tr>
 				<th:block th:each="card3 : ${rank3DataList}">
 					<tr>
-						<td>
+						<td class="cardName">
 							<a th:href="'/mashiro/mashiro_detail/' + ${card3.cardRank} + '/' + ${card3.cardId}">[[${card3.cardName}]]</a>
 						</td>
-						<td>[[${card3.type}]]</td>
-						<td>[[${card3.performance}]]</td>
-						<td>[[${card3.technique}]]</td>
-						<td>[[${card3.visual}]]</td>
-						<td>[[${card3.totalValue}]]</td>
-						<td>[[${card3.skillName}]]</td>
+						<td class="type">[[${card3.type}]]</td>
+						<td class="skillName">[[${card3.skillName}]]</td>
 						<td>
 							<th:block th:if="${card3.skillEffect}">
 								<th:block th:each="str, stat : ${card3.skillEffect.split('\r\n|\r|\n', -1)}">
@@ -138,29 +111,20 @@
 			<table>
 				<tr>
 					<th rowspan="2">カード名</th>
-					<th colspan="5">ステータス</th>
+					<th rowspan="2">タイプ</th>
 					<th colspan="2">スキル</th>
 				</tr>
 				<tr>
-					<th>タイプ</th>
-					<th>パフォーマンス</th>
-					<th>テクニック</th>
-					<th>ビジュアル</th>
-					<th>総合力</th>
 					<th>スキル名</th>
 					<th>効果</th>
 				</tr>
 				<th:block th:each="card2 : ${rank2DataList}">
 					<tr>
-						<td>
+						<td class="cardName">
 							<a th:href="'/mashiro/mashiro_detail/' + ${card2.cardRank} + '/' + ${card2.cardId}">[[${card2.cardName}]]</a>
 						</td>
-						<td>[[${card2.type}]]</td>
-						<td>[[${card2.performance}]]</td>
-						<td>[[${card2.technique}]]</td>
-						<td>[[${card2.visual}]]</td>
-						<td>[[${card2.totalValue}]]</td>
-						<td>[[${card2.skillName}]]</td>
+						<td class="type">[[${card2.type}]]</td>
+						<td class="skillName">[[${card2.skillName}]]</td>
 						<td>
 							<th:block th:if="${card2.skillEffect}">
 								<th:block th:each="str, stat : ${card2.skillEffect.split('\r\n|\r|\n', -1)}">
@@ -178,29 +142,20 @@
 			<table>
 				<tr>
 					<th rowspan="2">カード名</th>
-					<th colspan="5">ステータス</th>
+					<th rowspan="2">タイプ</th>
 					<th colspan="2">スキル</th>
 				</tr>
 				<tr>
-					<th>タイプ</th>
-					<th>パフォーマンス</th>
-					<th>テクニック</th>
-					<th>ビジュアル</th>
-					<th>総合力</th>
 					<th>スキル名</th>
 					<th>効果</th>
 				</tr>
 				<th:block th:each="card1 : ${rank1DataList}">
 					<tr>
-						<td>
+						<td class="cardName">
 							<a th:href="'/mashiro/mashiro_detail/' + ${card1.cardRank} + '/' + ${card1.cardId}">[[${card1.cardName}]]</a>
 						</td>
-						<td>[[${card1.type}]]</td>
-						<td>[[${card1.performance}]]</td>
-						<td>[[${card1.technique}]]</td>
-						<td>[[${card1.visual}]]</td>
-						<td>[[${card1.totalValue}]]</td>
-						<td>[[${card1.skillName}]]</td>
+						<td class="type">[[${card1.type}]]</td>
+						<td class="skillName">[[${card1.skillName}]]</td>
 						<td>
 							<th:block th:if="${card1.skillEffect}">
 								<th:block th:each="str, stat : ${card1.skillEffect.split('\r\n|\r|\n', -1)}">

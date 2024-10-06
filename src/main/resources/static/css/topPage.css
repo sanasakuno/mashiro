@@ -14,5 +14,12 @@ table th, table td {
   border: solid 1px black;
   /*実線 1px 黒*/
 }
-td {
+td.cardName {
+  width: 270px;
+}
+td.type {
+  width: 110px;
+}
+td.skillName {
+  width: 380px;
 }

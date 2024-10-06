@@ -5,8 +5,10 @@
   <head>
 	<head>
 		<title>ましろちゃんカード詳細</title>
-		<meta name="description" content="ましろちゃん美術館へようこそ！ここは世界一かわいい倉田ましろちゃんを眺められるサイトです。"/>
+		<meta name="description" content="ましろちゃんのカード詳細について記載します"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
 		<link rel="stylesheet" href="/css/detail.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
 	</head>
   </head>
 
@@ -22,6 +24,7 @@
 			<h2 th:case=2>レアリティ：★★</h2>
 			<h2 th:case=1>レアリティ：★</h2>
 		</th:block>
+		<h2>データ</h2>
 		<table>
 			<tr>
 				<th colspan="5">ステータス</th>
@@ -61,6 +64,33 @@
 				</td>
 			</tr>
 		</table>
+		<h2>画像</h2>
+		<th:block th:if="${card.beforeEvolutionImage != null}">
+			<div class="swiper-container" style="height: 720px; text-align: center;">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img height="100%" th:src="'/image/BangDream/' + ${card.cardRank} + '/' + ${card.beforeEvolutionImage}" alt=""></div>
+					<div class="swiper-slide"><img height="100%" th:src="'/image/BangDream/' + ${card.cardRank} + '/' + ${card.afterEvolutionImage}" alt=""></div>
+				</div>
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+		</th:block>
+		<th:block th:unless="${card.beforeEvolutionImage != null}">
+			<div style="height: 720px; text-align: center;">
+				<img height="100%" th:src="'/image/BangDream/' + ${card.cardRank} + '/' + ${card.afterEvolutionImage}" alt="">
+			</div>
+		</th:block>
+		<script>
+			var mySwiper = new Swiper('.swiper-container', {
+				effect: "slide",
+				loop: true,
+				autoplay: 5000,
+				pagination: '.swiper-pagination',
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+			})
+		</script>
 	</body>
 
 </html>
